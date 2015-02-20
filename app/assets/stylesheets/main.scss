@@ -1,6 +1,7 @@
 // Import and organize all stylesheets in this file
+@import "base/foundation_and_overrides";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "base/globals";
-// @import "styles/landing";
+@import "styles/landing";
 

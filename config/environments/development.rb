@@ -38,4 +38,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  #Add Rack::LiveReload to the bottom of the middleware stack with defaults
+  config.middleware.use(Rack::LiveReload,
+                        min_delay: 500,
+                        host: 'infoshuttle.dev')
 end
