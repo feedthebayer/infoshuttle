@@ -41,6 +41,7 @@ Rails.application.configure do
 
   #Add Rack::LiveReload to the bottom of the middleware stack with defaults
   config.middleware.use(Rack::LiveReload,
-                        min_delay: 500,
+                        min_delay: 400,
+                        max_delay: 120_000,
                         host: 'infoshuttle.dev')
 end
