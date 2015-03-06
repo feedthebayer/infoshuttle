@@ -10,14 +10,14 @@
 }
 
 .landing__sign-in {
-  position: absolute;
-  top: 0;
-  right: 0;
   padding: 0.7em;
+  position: absolute;
+  right: 0;
+  top: 0;
 
   @media #{$medium-up} {
-    text-shadow: none;
     padding: 1em;
+    text-shadow: none;
 
     a {
       @include button($padding: $button-tny, $bg: $secondary-color);
@@ -86,8 +86,8 @@
       display: inline-block;
       font-size: 1em;
       margin-bottom: 0;
-      width: 46.8%; //2*47 + 5.55 = 100%
       vertical-align: top;
+      width: 46.8%; //2*47 + 5.55 = 100%
     }
 
     p+p {
@@ -112,8 +112,8 @@
 
     p {
       display: block;
-      font-size: 1.2em;
       float: none;
+      font-size: 1.2em;
       width: 100%;
     }
 
@@ -142,9 +142,9 @@
 
   @media #{$xlarge-up} {
     float: right;
-    padding: 0;
     margin-bottom: 5%;
     margin-right: 5%;
+    padding: 0;
     width: 50%;
   }
 }
@@ -164,13 +164,13 @@
 }
 
 .landing__background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
   background: $black image-url('background.jpg') no-repeat center top;
   background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }
 
