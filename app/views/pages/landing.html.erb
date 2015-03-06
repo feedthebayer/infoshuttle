@@ -1,33 +1,34 @@
-<main id=landing>
-  <nav id="sign-in"><a href="#">Sign In</a></nav>
+<main class="landing">
+  <nav class="landing__sign-in"><a href="#">Sign In</a></nav>
 
-  <section id="hero">
-    <h1 id="intro-text">
-      <span class="first">Approaching escape velocity...</span>
-      <span class="second">...prepare to enter knowledge orbit.</span>
+  <header class="landing__hero">
+    <h1 class="hero">
+      <span class="hero__first">Approaching escape velocity...</span>
+      <span class="hero__second">...prepare to enter knowledge orbit.</span>
     </h1>
+  </header>
+
+  <section class="landing__description">
+    <p>
+      <i>InfoShuttle</i> is a super simple wiki with the solarized-dark color
+      scheme, markdown editing, and a full responsive design.
+    </p>
+    <p>
+      Free accounts feature unlimited public wikis with unlimited collaborators.
+      Premium accounts gain unlimited private wikis.
+    </p>
   </section>
 
-  <div id="product-info">
-    <section id="copy">
-      <p>
-        <i>InfoShuttle</i> is a super simple wiki with the solarized-dark color
-        scheme, markdown editing, and a responsive design.
-      </p>
-      <p>
-        Free accounts feature unlimited public wikis with unlimited collaborators.
-        Premium accounts gain unlimited private wikis.
-      </p>
-    </section>
+  <section class="landing__screenshot">
+    <%= image_tag 'http://placehold.it/1200x800' %>
+  </section>
 
-    <section id="screenshot"><%= image_tag 'http://placehold.it/1200x800' %></section>
+  <nav class="landing__register"><a href="#">Register for free!</a></nav>
 
-    <nav id="register"><a href="#">Register for free!</a></nav>
-  </div>
-
-  <h1 id="logo">
-    <span id="icon"><i id="shuttle-icon"></i></span>
-    <span id="info">Info</span><span id="shuttle">Shuttle</span>
+  <h1 class="logo">
+    <span><i class="logo__icon"></i></span>
+    <span class="logo__info">Info</span><span class="logo__shuttle">Shuttle</span>
   </h1>
 </main>
-<div id="landing-background"></div>
+
+<div class="landing__background"></div>

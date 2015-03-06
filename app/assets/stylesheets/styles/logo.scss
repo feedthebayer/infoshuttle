@@ -1,0 +1,52 @@
+.logo {
+  color: $white;
+  clear: both;
+  font-style: italic;
+  font-size: 2.8em;
+  letter-spacing: -0.02em;
+  text-align: center;
+
+  .landing & {
+    @media (min-width: 400px) {
+      font-size: 3.7em;
+    }
+
+    @media (min-width: 500px) {
+      font-size: 4.7em;
+    }
+
+    @media (min-width: 600px) {
+      font-size: 5.7em;
+    }
+
+    @media (min-width: 700px) {
+      font-size: 6.7em;
+    }
+
+    @media #{$large-up} {
+      font-size: 9em;
+    }
+
+    @media #{$xlarge-up} {
+      font-size: 12em;
+    }
+  }
+}
+
+.logo__icon {
+  @extend .fa;
+  @extend .fa-space-shuttle;
+  color: $white;
+  font-size: 1.2em;
+  letter-spacing: -0.17em;
+}
+
+.logo__info {
+  font-weight: 800;
+}
+
+.logo__shuttle {
+  font-weight: 100;
+  letter-spacing: -0.06em;
+}
+

@@ -1,0 +1,3 @@
+SelectorFormat:
+  enabled: true
+  convention: BEM
