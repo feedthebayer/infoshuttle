@@ -33,6 +33,7 @@ end
 group :production do
   gem 'rails_12factor'
   gem 'puma'
+  gem 'newrelic_rpm'
 end
 
 ruby "2.1.2"
