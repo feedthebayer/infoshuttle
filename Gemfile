@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'high_voltage'
 gem 'font-awesome-sass'
 gem 'foundation-rails'
+gem 'sorcery'
 
 
 # Use Capistrano for deployment
