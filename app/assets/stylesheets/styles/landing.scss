@@ -164,7 +164,7 @@
 }
 
 .landing__background {
-  background: $black image-url('background.jpg') no-repeat center top;
+  background: $black image-url('background-sm.jpg') no-repeat center top;
   background-size: cover;
   height: 100vh;
   position: fixed;
@@ -172,5 +172,10 @@
   top: 0;
   width: 100%;
   z-index: -1;
+
+  @media (min-width: 700px) {
+    background: $black image-url('background.jpg') no-repeat center top;
+    background-size: cover;
+  }
 }
 
