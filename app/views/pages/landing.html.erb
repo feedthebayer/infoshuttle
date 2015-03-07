@@ -1,5 +1,11 @@
 <main class="landing">
-  <nav class="landing__sign-in"><a href="#">Sign In</a></nav>
+  <nav class="landing__sign-in">
+    <% if current_user %>
+      <%= link_to "Sign Out", sign_out_path, method: :post %>
+    <% else %>
+      <%= link_to "Sign In", sign_in_path %>
+    <% end %>
+  </nav>
 
   <header class="landing__hero">
     <h1 class="hero">
@@ -23,7 +29,9 @@
     <%= image_tag 'http://placehold.it/1200x800' %>
   </section>
 
-  <nav class="landing__register"><a href="#">Register for free!</a></nav>
+  <nav class="landing__register">
+    <%= link_to "Register for free!", register_path %>
+  </nav>
 
   <h1 class="logo">
     <span><i class="logo__icon"></i></span>

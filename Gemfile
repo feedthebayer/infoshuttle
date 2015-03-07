@@ -12,6 +12,7 @@ gem 'high_voltage'
 gem 'font-awesome-sass'
 gem 'foundation-rails'
 gem 'sorcery'
+gem 'simple_form'
 
 
 # Use Capistrano for deployment
