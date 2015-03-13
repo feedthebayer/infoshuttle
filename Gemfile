@@ -13,6 +13,7 @@ gem 'font-awesome-sass'
 gem 'foundation-rails'
 gem 'sorcery'
 gem 'simple_form'
+gem 'figaro'
 
 
 # Use Capistrano for deployment
@@ -30,6 +31,8 @@ group :development, :test do
   gem 'guard'
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
+  gem 'awesome_print', require:"ap"
+  gem 'quiet_assets'
 end
 
 group :production do

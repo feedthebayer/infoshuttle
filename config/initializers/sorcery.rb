@@ -2,7 +2,7 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-Rails.application.config.sorcery.submodules = [:remember_me]
+Rails.application.config.sorcery.submodules = [:remember_me, :external]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -76,7 +76,7 @@ Rails.application.config.sorcery.configure do |config|
   # What providers are supported by this app, i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce] .
   # Default: `[]`
   #
-  # config.external_providers =
+  config.external_providers = [:twitter]
 
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
@@ -110,11 +110,15 @@ Rails.application.config.sorcery.configure do |config|
   # Twitter will not accept any requests nor redirect uri containing localhost,
   # make sure you use 0.0.0.0:3000 to access your app in development
   #
-  # config.twitter.key = ""
-  # config.twitter.secret = ""
-  # config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
-  # config.twitter.user_info_mapping = {:email => "screen_name"}
-  #
+  config.twitter.key = ENV["twitter_consumer_key"]
+  config.twitter.secret = ENV["twitter_consumer_secret"]
+  if Rails.env.development?
+    config.twitter.callback_url = "http://infoshuttle.dev/oauth/callback?provider=twitter"
+  else
+    config.twitter.callback_url = "http://infoshuttle.bayer.ws/oauth/callback?provider=twitter"
+  end
+  config.twitter.user_info_mapping = { :username => "screen_name", :name => "name" }
+
   # config.facebook.key = ""
   # config.facebook.secret = ""
   # config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
@@ -435,7 +439,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    # user.authentications_class =
+    user.authentications_class = Authentication
 
 
     # User's identifier in authentications class.

@@ -369,6 +369,7 @@ $anchor-font-color-hover: scale-color($blue, $lightness: -14%);
 // We use these to control text style.
 // $alert-font-weight: $font-weight-normal;
 // $alert-font-size: rem-calc(13);
+$alert-font-size: rem-calc(20);
 // $alert-font-color: $white;
 // $alert-font-color-alt: scale-color($secondary-color, $lightness: -66%);
 
@@ -392,6 +393,7 @@ $anchor-font-color-hover: scale-color($blue, $lightness: -14%);
 
 // We use this to control border radius
 // $alert-radius: $global-radius;
+$alert-radius: 0;
 
 // We use this to control transition effects
 // $alert-transition-speed: 300ms;

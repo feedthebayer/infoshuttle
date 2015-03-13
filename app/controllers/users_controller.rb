@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :require_login, except: [:new, :create]
+
   def new
     @user = User.new
   end
@@ -7,7 +9,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash.now[:success] = "Welcome to knowledge orbit, captain!"
+      reset_session
+      auto_login(@user, true)
+      flash[:success] = "Welcome to knowledge orbit, captain!"
       redirect_to root_path
     else
       flash.now[:alert] = "Houston, we have a problem..."

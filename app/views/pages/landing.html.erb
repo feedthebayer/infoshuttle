@@ -3,7 +3,7 @@
     <% if current_user %>
       <%= link_to "Sign Out", sign_out_path, method: :post %>
     <% else %>
-      <%= link_to "Sign In", sign_in_path %>
+      <%= link_to "Sign In", auth_at_provider_path(:provider => :twitter) %>
     <% end %>
   </nav>
 
@@ -30,7 +30,7 @@
   </section>
 
   <nav class="landing__register">
-    <%= link_to "Register for free!", register_path %>
+    <%= link_to "Get Started for Free!", auth_at_provider_path(:provider => :twitter) %>
   </nav>
 
   <h1 class="logo">

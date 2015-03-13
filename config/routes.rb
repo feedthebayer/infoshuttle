@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  get 'register' => 'users#new'
-  resources :users, path: 'register', only: [:create]
+  # get 'register' => 'users#new'
+  # resources :users, path: 'register', only: [:create]
 
-  get 'sign_in' => 'user_sessions#new'
-  resources :user_sessions, path: 'sign_in', only: [:create]
+  # get 'sign_in' => 'user_sessions#new'
+  # resources :user_sessions, path: 'sign_in', only: [:create]
   post 'sign_out' => 'user_sessions#destroy'
+
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/callback" => "oauths#callback"
+  get "sign_in/:provider" => "oauths#oauth", as: :auth_at_provider
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
