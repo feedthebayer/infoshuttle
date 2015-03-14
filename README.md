@@ -9,8 +9,9 @@ This app lives at [infoshuttle.bayer.ws](http://infoshuttle.bayer.ws)
 ### Definitions
 
 * **Wiki:** a collection of related pages with common collaborators
-* **Anyone:** anyone :)
-* **Registered user:** someone who has authenticated via Twitter
+* **Anyone:** anyone :]
+* **Registered user:** a user who has authenticated via Twitter
+* **Premium User:** a user who pays :]
 * **Owner:** the user who creates a private wiki
 * **Collaborator:** a user who can edit the wiki
 
