@@ -17,7 +17,8 @@ class OauthsController < ApplicationController
         flash[:success] = "Welcome to knowledge orbit, captain!"
         redirect_to root_path
       rescue
-        flash[:alert] = "We're really sorry, but we couldn't authenticate with #{provider.titleize}"
+        flash[:alert] = "We're really sorry, but we couldn't authenticate
+                          with #{provider.titleize}"
         redirect_to root_path
       end
     end
