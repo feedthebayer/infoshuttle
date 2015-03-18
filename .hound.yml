@@ -1,2 +1,5 @@
 ignored_directories:
   - vendor
+
+scss:
+  config_file: config/scss.yml

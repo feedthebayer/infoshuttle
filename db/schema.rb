@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318021400) do
+ActiveRecord::Schema.define(version: 20150318234114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20150318021400) do
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
 
+  create_table "pages", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "wiki_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "pages", ["wiki_id"], name: "index_pages_on_wiki_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -38,4 +48,16 @@ ActiveRecord::Schema.define(version: 20150318021400) do
   add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
+  create_table "wikis", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "public",     default: true
+    t.integer  "user_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "wikis", ["user_id"], name: "index_wikis_on_user_id", using: :btree
+
+  add_foreign_key "pages", "wikis"
+  add_foreign_key "wikis", "users"
 end
