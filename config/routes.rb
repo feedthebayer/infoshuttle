@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  # get 'register' => 'users#new'
-  # resources :users, path: 'register', only: [:create]
-
-  # get 'sign_in' => 'user_sessions#new'
-  # resources :user_sessions, path: 'sign_in', only: [:create]
   post 'sign_out' => 'user_sessions#destroy'
 
   post "oauth/callback" => "oauths#callback"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313020246) do
+ActiveRecord::Schema.define(version: 20150318021400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,6 @@ ActiveRecord::Schema.define(version: 20150313020246) do
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "crypted_password"
-    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_me_token"

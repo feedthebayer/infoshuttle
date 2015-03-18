@@ -8,18 +8,18 @@ class OauthsController < ApplicationController
     provider = auth_params[:provider]
     if @user = login_from(provider, true)
       flash[:success] = "Welcome to knowledge orbit, captain!"
-      redirect_to root_path
+      redirect_back_or_to root_path
     else
       begin
         @user = create_from(provider)
         reset_session
         auto_login(@user, true)
         flash[:success] = "Welcome to knowledge orbit, captain!"
-        redirect_to root_path
+        redirect_back_or_to root_path
       rescue
         flash[:alert] = "We're really sorry, but we couldn't authenticate
                           with #{provider.titleize}"
-        redirect_to root_path
+        redirect_back_or_to root_path
       end
     end
   end
