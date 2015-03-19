@@ -12,13 +12,14 @@ This app lives at [infoshuttle.bayer.ws](http://infoshuttle.bayer.ws)
 * **Anyone:** anyone :]
 * **Registered user:** a user who has authenticated via Twitter
 * **Premium User:** a user who pays :]
-* **Owner:** the user who creates a private wiki
+* **Owner:** the user who created a wiki
 * **Collaborator:** a user who can edit the wiki
 
 ### Public Wiki
 
 * **Anyone** can view
 * All **registered users** are **collaborators**
+* Has one **owner** who can convert it to a public wiki if they are a **premium user**.
 
 ### Private Wiki
 
