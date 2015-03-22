@@ -12,8 +12,24 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require best_in_place
+//= require jquery-ui
+//= require best_in_place.jquery-ui
 //= require foundation
 //= require turbolinks
 //= require_tree .
 
 $(document).foundation();
+
+$(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+
+  $('.best_in_place').bind("ajax:success", function() {
+    $(this).effect('highlight');
+  });
+
+  $('.best_in_place').bind("ajax:error", function() {
+    $(this).append("<small class='error'>Uh oh, you must enter something!</small>");
+  });
+});

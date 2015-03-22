@@ -13,6 +13,8 @@ gem 'foundation-rails'
 gem 'sorcery'
 gem 'simple_form'
 gem 'figaro'
+gem 'best_in_place'
+gem 'jquery-ui-rails'
 
 
 # Use Capistrano for deployment

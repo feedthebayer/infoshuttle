@@ -1,11 +1,28 @@
-<h1>Wikis#show</h1>
-<p>Find me in app/views/wikis/show.html.erb</p>
-<p>
-  <%= @wiki.name %>
-</p>
-<p>
-  <%= @wiki.pages.first.title %>
-</p>
-<p>
-  <%= @wiki.pages.first.content %>
-</p>
+<main class="wiki">
+  <div class="standard-view">
+    <h1>
+      <%= best_in_place @wiki,
+        :name,
+        ok_button: "Update wiki name",
+        cancel_button: "Cancel"
+      %>
+    </h1>
+
+    <section class="standard-view__list">
+      <h3>Pages:</h3>
+      <ul>
+        <% @pages.each do |page| %>
+          <li class="standard-view__list-item">
+            <%= link_to "#{page.title}", [@wiki, page] %>
+          </li>
+        <% end %>
+        <li class="standard-view__list-item">
+          <b><i><%= link_to "New...", new_wiki_page_path(@wiki), method: :post %></i></b>
+        </li>
+      </ul>
+    </section>
+
+    <%= render 'global_footer' %>
+  </div>
+</main>
+

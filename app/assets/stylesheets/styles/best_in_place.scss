@@ -1,0 +1,28 @@
+.best_in_place {
+  cursor: pointer;
+
+  input {
+    // margin-bottom: 0;
+  }
+
+  input[type="text"] {
+    max-width: 40em;
+  }
+
+  input[type="submit"] {
+    @include button($button-tny, $primary-color);
+    margin-right: 1.7em;
+  }
+
+  input[type="button"] {
+    @include button($button-tny, $secondary-color);
+  }
+
+  .error {
+    display: table;
+    font-size: 1rem;
+    max-width: 40em;
+    padding-top: 1rem;
+    padding-bottom: 0.7rem;
+  }
+}

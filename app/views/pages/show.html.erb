@@ -1,2 +1,34 @@
-<h1>Pages#show</h1>
-<p>Find me in app/views/pages/show.html.erb</p>
+<main class="page">
+  <div class="standard-view">
+    <h1><%= @page.wiki.name %></h1>
+
+    <section class="standard-view__list">
+      <h3>
+        <%= best_in_place @page,
+          :title,
+          url: edit_wiki_page_path,
+          ok_button: "Update page title",
+          cancel_button: "Cancel"
+        %>
+      </h3>
+      <ul>
+        <li class="standard-view__list-item">
+          <%= best_in_place @page,
+            :content,
+            as: :textarea,
+            url: edit_wiki_page_path,
+            ok_button: "Update page content",
+            cancel_button: "Cancel",
+            confirm: true
+          %>
+        </li>
+        <li class="standard-view__list-item">
+          <i><%= link_to "Back", @page.wiki %></i>
+        </li>
+      </ul>
+    </section>
+
+    <%= render 'global_footer' %>
+  </div>
+</main>
+

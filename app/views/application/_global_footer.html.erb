@@ -1,0 +1,17 @@
+<footer class="global-footer">
+  <h1 class="logo">
+    <%= link_to root_path do %>
+      <span><i class="logo__icon"></i></span>
+      <span class="logo__info">Info</span><span class="logo__shuttle">Shuttle</span>
+    <% end %>
+  </h1>
+
+  <nav>
+    <ul class="nav-links">
+      <li class="nav-links__item"><%= link_to "Level up!", root_path %></li>
+      <li class="nav-links__item"><%= link_to "Help", root_path %></li>
+      <li class="nav-links__item"><%= link_to "Account", edit_user_path(current_user) %></li>
+      <li class="nav-links__item"><%= link_to "Sign out", sign_out_path %></li>
+    </ul>
+  </nav>
+</footer>

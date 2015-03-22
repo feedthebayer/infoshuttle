@@ -1,0 +1,17 @@
+.global-footer {
+  text-align: center;
+}
+
+.nav-links {
+  margin: 0;
+}
+
+.nav-links__item {
+  display: inline-block;
+  font-size: 0.9em;
+  list-style: none;
+
+  & + & {
+    padding-left: 1.4em;
+  }
+}

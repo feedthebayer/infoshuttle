@@ -6,6 +6,16 @@
   letter-spacing: -0.02em;
   text-align: center;
 
+  .standard-view & {
+    margin-bottom: 0;
+  }
+
+  .global-footer & {
+    a {
+      color: inherit;
+    }
+  }
+
   .landing & {
     @media (min-width: 400px) {
       font-size: 3.7em;

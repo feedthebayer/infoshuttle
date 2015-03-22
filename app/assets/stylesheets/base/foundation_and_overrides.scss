@@ -151,7 +151,7 @@ $warning-color: $magenta;
 $info-color: $yellow;
 
 // We use these to control various global styles
-$body-bg: #000;
+$body-bg: $base03;
 $body-font-color: $base0;
 $body-font-family: $font-family-serif;
 // $body-font-weight: $font-weight-normal;
@@ -256,6 +256,7 @@ $h2-font-reduction: rem-calc(13) !default;
 
 // A general <small> styling
 // $small-font-size: 60%;
+$small-font-size: 65%;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
@@ -450,9 +451,9 @@ $alert-radius: 0;
 // $include-html-button-classes: $include-html-classes;
 
 // We use these to build padding for buttons.
-// $button-tny: rem-calc(10);
-// $button-sml: rem-calc(14);
-// $button-med: rem-calc(16);
+$button-tny: rem-calc(8);
+$button-sml: rem-calc(10);
+$button-med: rem-calc(12);
 // $button-lrg: rem-calc(18);
 
 // We use this to control the display property.

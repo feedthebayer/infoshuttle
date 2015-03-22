@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318234114) do
+ActiveRecord::Schema.define(version: 20150327021222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,11 @@ ActiveRecord::Schema.define(version: 20150318234114) do
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
 
   create_table "pages", force: :cascade do |t|
-    t.string   "title"
-    t.text     "content"
+    t.string   "title",      default: "Click here to change the page title"
+    t.text     "content",    default: "Click here to change the content of this page"
     t.integer  "wiki_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                                                           null: false
+    t.datetime "updated_at",                                                           null: false
   end
 
   add_index "pages", ["wiki_id"], name: "index_pages_on_wiki_id", using: :btree
@@ -49,11 +49,11 @@ ActiveRecord::Schema.define(version: 20150318234114) do
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
   create_table "wikis", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       default: "Click here to change the wiki name"
     t.boolean  "public",     default: true
     t.integer  "user_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
   end
 
   add_index "wikis", ["user_id"], name: "index_wikis_on_user_id", using: :btree

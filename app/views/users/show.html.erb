@@ -1,0 +1,29 @@
+<main class="home">
+  <div class="standard-view">
+    <h1>Hi <%= @user.name.split[0] %>!</h1>
+
+    <section class="standard-view__list">
+      <h3>Your wikis:</h3>
+      <ul>
+        <% @wikis.each do |wiki| %>
+          <small class="standard-view__list-item-visibility">
+            <% if wiki.public? %>
+              public
+            <% else %>
+              private
+            <% end %>
+          </small>
+          <li class="standard-view__list-item">
+            <%= link_to "#{wiki.name}", wiki %>
+          </li>
+        <% end %>
+        <li class="standard-view__list-item">
+          <b><i><%= link_to "New...", new_wiki_path, method: :post %></i></b>
+        </li>
+      </ul>
+    </section>
+
+    <%= render 'global_footer' %>
+  </div>
+</main>
+
