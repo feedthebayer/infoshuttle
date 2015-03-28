@@ -5,12 +5,11 @@ class WikisController < ApplicationController
     @wiki.save!
 
     params[:id] = @wiki.id
-    redirect_to @wiki
+    render :show
   end
 
   def show
     @wiki = Wiki.find(params[:id])
-    @pages = @wiki.pages
   end
 
   def update
@@ -19,6 +18,18 @@ class WikisController < ApplicationController
 
     respond_to do |format|
       format.json { respond_with_bip(@wiki) }
+    end
+  end
+
+  def destroy
+    @wiki = Wiki.find(params[:id])
+
+    if @wiki.destroy
+      flash[:success] = "\"#{@wiki.name}\" has been deleted"
+      redirect_to root_path
+    else
+      flash[:alert] = "On snap! There was a problem deleting \"#{@wiki.name}\""
+      render :show
     end
   end
 

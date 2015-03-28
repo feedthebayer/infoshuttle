@@ -14,6 +14,15 @@
   }
 }
 
+.standard-view__list-link {
+  font-style: italic;
+  font-weight: bold;
+
+  & + & {
+    padding-left: 1.5em;
+  }
+}
+
 .standard-view__list {
   margin-bottom: 3em;
 

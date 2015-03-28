@@ -17,8 +17,10 @@
             <%= link_to "#{wiki.name}", wiki %>
           </li>
         <% end %>
+        <br>
         <li class="standard-view__list-item">
-          <b><i><%= link_to "New...", new_wiki_path, method: :post %></i></b>
+          <%= link_to "New wiki...", new_wiki_path, method: :post,
+            class: "standard-view__list-link" %>
         </li>
       </ul>
     </section>

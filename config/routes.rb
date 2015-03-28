@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   get '/:id' => 'wikis#show', as: 'wiki'
   put '/:id' => 'wikis#update', as: 'edit_wiki'
   post '/new' => 'wikis#new', as: 'new_wiki'
+  delete '/:id' => 'wikis#destroy', as: 'delete_wiki'
   get '/:wiki_id/pages/:id' => 'pages#show', as: 'wiki_page'
   put '/:wiki_id/pages/:id' => 'pages#update', as: 'edit_wiki_page'
   post '/:wiki_id/pages/new' => 'pages#new', as: 'new_wiki_page'
+  delete '/:wiki_id/pages/:id' => 'pages#destroy', as: 'delete_wiki_page'
 
   get '/' => 'users#show', constraints: RouteConstraints::UserRequiredConstraint.new
   root 'pages#show', id: 'landing'

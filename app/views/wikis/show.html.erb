@@ -11,13 +11,18 @@
     <section class="standard-view__list">
       <h3>Pages:</h3>
       <ul>
-        <% @pages.each do |page| %>
+        <% @wiki.pages.each do |page| %>
           <li class="standard-view__list-item">
             <%= link_to "#{page.title}", [@wiki, page] %>
           </li>
         <% end %>
+        <br>
         <li class="standard-view__list-item">
-          <b><i><%= link_to "New...", new_wiki_page_path(@wiki), method: :post %></i></b>
+          <%= link_to "New page...", new_wiki_page_path(@wiki), method: :post,
+              class: "standard-view__list-link" %>
+          <%= link_to "Delete wiki", delete_wiki_path(@wiki), method: :delete,
+              class: "standard-view__list-link",
+              data: { confirm: "You're ok with deleting this wiki?" } %>
         </li>
       </ul>
     </section>

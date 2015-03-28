@@ -25,6 +25,19 @@ class PagesController < ApplicationController
     end
   end
 
+  def destroy
+    @page = Page.find(params[:id])
+
+    if @page.destroy
+      flash[:success] = "\"#{@page.title}\" has been deleted"
+      redirect_to @page.wiki
+    else
+      flash[:alert] = "On snap! There was a problem deleting \"#{@page.title}\""
+      render :show
+    end
+  end
+
+
   private
 
   def page_params

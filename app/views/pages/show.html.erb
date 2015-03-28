@@ -1,6 +1,12 @@
 <main class="page">
   <div class="standard-view">
-    <h1><%= @page.wiki.name %></h1>
+    <h1>
+      <%= best_in_place @page.wiki,
+        :name,
+        ok_button: "Update wiki name",
+        cancel_button: "Cancel"
+      %>
+    </h1>
 
     <section class="standard-view__list">
       <h3>
@@ -22,8 +28,12 @@
             confirm: true
           %>
         </li>
+        <br>
         <li class="standard-view__list-item">
-          <i><%= link_to "Back", @page.wiki %></i>
+          <%= link_to "Back to wiki", @page.wiki, class: "standard-view__list-link" %>
+          <%= link_to "Delete page", delete_wiki_page_path(@page.wiki, @page),
+            method: :delete, class: "standard-view__list-link",
+            data: { confirm: "You're ok with deleting this page?" } %>
         </li>
       </ul>
     </section>
