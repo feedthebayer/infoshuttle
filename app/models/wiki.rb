@@ -4,4 +4,6 @@ class Wiki < ActiveRecord::Base
   validates :name, presence: true
   validates :public, inclusion: { in: [true, false] }
   validates_associated :pages
+
+  default_scope { order("name ASC") }
 end
