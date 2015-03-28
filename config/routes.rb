@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   post '/:wiki_id/pages/new' => 'pages#new', as: 'new_wiki_page'
   delete '/:wiki_id/pages/:id' => 'pages#destroy', as: 'delete_wiki_page'
 
-  get '/' => 'users#show', constraints: RouteConstraints::UserRequiredConstraint.new
-  root 'pages#show', id: 'landing'
+  get '/' => 'users#show', as: 'root', constraints: RouteConstraints::UserRequiredConstraint.new
+  get '/' => 'pages#show', id: 'landing'
 
   resources :user, only: [:edit]
 end
