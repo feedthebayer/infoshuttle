@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   post "oauth/callback" => "oauths#callback"
   get "oauth/callback" => "oauths#callback"
   get "sign_in/:provider" => "oauths#oauth", as: 'auth_at_provider'
-  post 'sign_out' => 'user_sessions#destroy'
+  delete 'sign_out' => 'user_sessions#destroy'
 
   get 'landing' => 'pages#show', id: 'landing'
   get '/wikis' => 'wikis#index', as: 'wiki_index'

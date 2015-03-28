@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   end
 
   def show
+    redirect_to user_path(current_user) if current_user && params[:id].blank?
     if params[:id] == 'landing'
       render 'landing'
     else
