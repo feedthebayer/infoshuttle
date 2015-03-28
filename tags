@@ -1,0 +1,109 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ActiveSupport	.pow/taskthresher/test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddClearanceToUsers	.pow/taskthresher/db/migrate/20150131225402_add_clearance_to_users.rb	/^class AddClearanceToUsers < ActiveRecord::Migration$/;"	c
+AddNameToUser	db/migrate/20150313020246_add_name_to_user.rb	/^class AddNameToUser < ActiveRecord::Migration$/;"	c
+AddUsernameToUser	db/migrate/20150313015939_add_username_to_user.rb	/^class AddUsernameToUser < ActiveRecord::Migration$/;"	c
+Application	.pow/taskthresher/config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Taskthresher
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Infoshuttle
+ApplicationController	.pow/taskthresher/app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	.pow/taskthresher/app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+Authentication	app/models/authentication.rb	/^class Authentication < ActiveRecord::Base$/;"	c
+AuthenticationTest	test/models/authentication_test.rb	/^class AuthenticationTest < ActiveSupport::TestCase$/;"	c
+ChangeWikiAndPageDefaults	db/migrate/20150327021222_change_wiki_and_page_defaults.rb	/^class ChangeWikiAndPageDefaults < ActiveRecord::Migration$/;"	c
+CreatePages	db/migrate/20150318234114_create_pages.rb	/^class CreatePages < ActiveRecord::Migration$/;"	c
+CreateTasks	.pow/taskthresher/db/migrate/20150206030444_create_tasks.rb	/^class CreateTasks < ActiveRecord::Migration$/;"	c
+CreateUsers	.pow/taskthresher/db/migrate/20150131222237_create_users.rb	/^class CreateUsers < ActiveRecord::Migration$/;"	c
+CreateWikis	db/migrate/20150318233553_create_wikis.rb	/^class CreateWikis < ActiveRecord::Migration$/;"	c
+Infoshuttle	config/application.rb	/^module Infoshuttle$/;"	m
+OauthsController	app/controllers/oauths_controller.rb	/^class OauthsController < ApplicationController$/;"	c
+OauthsControllerTest	test/controllers/oauths_controller_test.rb	/^class OauthsControllerTest < ActionController::TestCase$/;"	c
+Page	app/models/page.rb	/^class Page < ActiveRecord::Base$/;"	c
+PageTest	test/models/page_test.rb	/^class PageTest < ActiveSupport::TestCase$/;"	c
+PagesController	app/controllers/pages_controller.rb	/^class PagesController < ApplicationController$/;"	c
+PagesControllerTest	test/controllers/pages_controller_test.rb	/^class PagesControllerTest < ActionController::TestCase$/;"	c
+PasswordsController	.pow/taskthresher/app/controllers/passwords_controller.rb	/^class PasswordsController < Clearance::PasswordsController$/;"	c
+RemoveEmailFromUser	db/migrate/20150313020115_remove_email_from_user.rb	/^class RemoveEmailFromUser < ActiveRecord::Migration$/;"	c
+RemovePasswordFromUser	db/migrate/20150318021400_remove_password_from_user.rb	/^class RemovePasswordFromUser < ActiveRecord::Migration$/;"	c
+RouteConstraints	lib/route_constraints/user_constraint.rb	/^module RouteConstraints::UserConstraint$/;"	m
+RouteConstraints	lib/route_constraints/user_required_constraint.rb	/^class RouteConstraints::UserRequiredConstraint$/;"	c
+RouteConstraints	lib/user_constraint.rb	/^  class RouteConstraints::UserRequiredConstraint$/;"	c
+RouteConstraints	lib/user_constraint.rb	/^module RouteConstraints::UserConstraint$/;"	m
+SessionsController	.pow/taskthresher/app/controllers/sessions_controller.rb	/^class SessionsController < Clearance::SessionsController$/;"	c
+SorceryCore	db/migrate/20150307221853_sorcery_core.rb	/^class SorceryCore < ActiveRecord::Migration$/;"	c
+SorceryExternal	db/migrate/20150311005913_sorcery_external.rb	/^class SorceryExternal < ActiveRecord::Migration$/;"	c
+SorceryRememberMe	db/migrate/20150311004355_sorcery_remember_me.rb	/^class SorceryRememberMe < ActiveRecord::Migration$/;"	c
+Task	.pow/taskthresher/app/models/task.rb	/^class Task < ActiveRecord::Base$/;"	c
+TaskTest	.pow/taskthresher/test/models/task_test.rb	/^class TaskTest < ActiveSupport::TestCase$/;"	c
+TasksController	.pow/taskthresher/app/controllers/tasks_controller.rb	/^class TasksController < ApplicationController$/;"	c
+TasksControllerTest	.pow/taskthresher/test/controllers/tasks_controller_test.rb	/^class TasksControllerTest < ActionController::TestCase$/;"	c
+TasksHelper	.pow/taskthresher/app/helpers/tasks_helper.rb	/^module TasksHelper$/;"	m
+TasksHelperTest	.pow/taskthresher/test/helpers/tasks_helper_test.rb	/^class TasksHelperTest < ActionView::TestCase$/;"	c
+Taskthresher	.pow/taskthresher/config/application.rb	/^module Taskthresher$/;"	m
+User	.pow/taskthresher/app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+User	app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+UserSessionsController	app/controllers/user_sessions_controller.rb	/^class UserSessionsController < ApplicationController$/;"	c
+UserSessionsControllerTest	test/controllers/user_sessions_controller_test.rb	/^class UserSessionsControllerTest < ActionController::TestCase$/;"	c
+UserTest	.pow/taskthresher/test/models/user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
+UserTest	test/models/user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
+UsersController	.pow/taskthresher/app/controllers/users_controller.rb	/^class UsersController < Clearance::UsersController$/;"	c
+UsersController	app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+UsersControllerTest	test/controllers/users_controller_test.rb	/^class UsersControllerTest < ActionController::TestCase$/;"	c
+Wiki	app/models/wiki.rb	/^class Wiki < ActiveRecord::Base$/;"	c
+WikiTest	test/models/wiki_test.rb	/^class WikiTest < ActiveSupport::TestCase$/;"	c
+WikisController	app/controllers/wikis_controller.rb	/^class WikisController < ApplicationController$/;"	c
+WikisControllerTest	test/controllers/wikis_controller_test.rb	/^class WikisControllerTest < ActionController::TestCase$/;"	c
+auth_params	app/controllers/oauths_controller.rb	/^  def auth_params$/;"	f	class:OauthsController
+callback	app/controllers/oauths_controller.rb	/^  def callback$/;"	f	class:OauthsController
+change	.pow/taskthresher/db/migrate/20150131222237_create_users.rb	/^  def change$/;"	f	class:CreateUsers
+change	.pow/taskthresher/db/migrate/20150206030444_create_tasks.rb	/^  def change$/;"	f	class:CreateTasks
+change	db/migrate/20150307221853_sorcery_core.rb	/^  def change$/;"	f	class:SorceryCore
+change	db/migrate/20150311004355_sorcery_remember_me.rb	/^  def change$/;"	f	class:SorceryRememberMe
+change	db/migrate/20150311005913_sorcery_external.rb	/^  def change$/;"	f	class:SorceryExternal
+change	db/migrate/20150313015939_add_username_to_user.rb	/^  def change$/;"	f	class:AddUsernameToUser
+change	db/migrate/20150313020115_remove_email_from_user.rb	/^  def change$/;"	f	class:RemoveEmailFromUser
+change	db/migrate/20150313020246_add_name_to_user.rb	/^  def change$/;"	f	class:AddNameToUser
+change	db/migrate/20150318021400_remove_password_from_user.rb	/^  def change$/;"	f	class:RemovePasswordFromUser
+change	db/migrate/20150318233553_create_wikis.rb	/^  def change$/;"	f	class:CreateWikis
+change	db/migrate/20150318234114_create_pages.rb	/^  def change$/;"	f	class:CreatePages
+change	db/migrate/20150327021222_change_wiki_and_page_defaults.rb	/^  def change$/;"	f	class:ChangeWikiAndPageDefaults
+create	.pow/taskthresher/app/controllers/passwords_controller.rb	/^  def create$/;"	f	class:PasswordsController
+create	.pow/taskthresher/app/controllers/sessions_controller.rb	/^  def create$/;"	f	class:SessionsController
+create	.pow/taskthresher/app/controllers/tasks_controller.rb	/^  def create$/;"	f	class:TasksController
+create	.pow/taskthresher/app/controllers/users_controller.rb	/^  def create$/;"	f	class:UsersController
+create_default_wiki	app/models/user.rb	/^  def create_default_wiki$/;"	f	class:User
+current_user	lib/route_constraints/user_constraint.rb	/^  def current_user(request)$/;"	f	class:RouteConstraints
+current_user	lib/user_constraint.rb	/^  def current_user(request)$/;"	f	class:RouteConstraints
+days_left	.pow/taskthresher/app/models/task.rb	/^  def days_left$/;"	f	class:Task
+destroy	.pow/taskthresher/app/controllers/tasks_controller.rb	/^  def destroy$/;"	f	class:TasksController
+destroy	app/controllers/pages_controller.rb	/^  def destroy$/;"	f	class:PagesController
+destroy	app/controllers/user_sessions_controller.rb	/^  def destroy$/;"	f	class:UserSessionsController
+destroy	app/controllers/wikis_controller.rb	/^  def destroy$/;"	f	class:WikisController
+down	.pow/taskthresher/db/migrate/20150131225402_add_clearance_to_users.rb	/^  def self.down$/;"	F	class:AddClearanceToUsers
+index	app/controllers/wikis_controller.rb	/^  def index$/;"	f	class:WikisController
+length	.pow/voiceofgod/public/js/plugins.js	/^    var length = methods.length;$/;"	v
+matches?	lib/route_constraints/user_required_constraint.rb	/^  def matches?(request)$/;"	f	class:RouteConstraints
+matches?	lib/user_constraint.rb	/^    def matches?(request)$/;"	f	class:RouteConstraints
+methods	.pow/voiceofgod/public/js/plugins.js	/^    var methods = [$/;"	v
+new	app/controllers/pages_controller.rb	/^  def new$/;"	f	class:PagesController
+new	app/controllers/wikis_controller.rb	/^  def new$/;"	f	class:WikisController
+noop	.pow/voiceofgod/public/js/plugins.js	/^    var noop = function () {};$/;"	f
+not_authenticated	app/controllers/application_controller.rb	/^  def not_authenticated$/;"	f	class:ApplicationController
+oauth	app/controllers/oauths_controller.rb	/^  def oauth$/;"	f	class:OauthsController
+page_params	app/controllers/pages_controller.rb	/^  def page_params$/;"	f	class:PagesController
+show	.pow/taskthresher/app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
+show	app/controllers/pages_controller.rb	/^  def show$/;"	f	class:PagesController
+show	app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
+show	app/controllers/wikis_controller.rb	/^  def show$/;"	f	class:WikisController
+task_params	.pow/taskthresher/app/controllers/tasks_controller.rb	/^  def task_params$/;"	f	class:TasksController
+up	.pow/taskthresher/db/migrate/20150131225402_add_clearance_to_users.rb	/^  def self.up$/;"	F	class:AddClearanceToUsers
+update	app/controllers/pages_controller.rb	/^  def update$/;"	f	class:PagesController
+update	app/controllers/wikis_controller.rb	/^  def update$/;"	f	class:WikisController
+wiki_params	app/controllers/wikis_controller.rb	/^  def wiki_params$/;"	f	class:WikisController

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'sign_out' => 'user_sessions#destroy'
 
   get 'landing' => 'pages#show', id: 'landing'
+  get '/wikis' => 'wikis#index', as: 'wiki_index'
   get '/:id' => 'wikis#show', as: 'wiki'
   put '/:id' => 'wikis#update', as: 'edit_wiki'
   post '/new' => 'wikis#new', as: 'new_wiki'

@@ -1,18 +1,11 @@
-<main class="home">
+<main class="wiki-index">
   <div class="standard-view">
-    <h1>Hi <%= @user.name.split[0] %>!</h1>
+    <h1>InfoShuttle Central</h1>
 
     <section class="standard-view__list">
-      <h3>Your wikis:</h3>
+      <h3>All Wikis in Orbit</h3>
       <ul>
         <% @wikis.each do |wiki| %>
-          <small class="standard-view__list-item-visibility">
-            <% if wiki.public? %>
-              public
-            <% else %>
-              private
-            <% end %>
-          </small>
           <li class="standard-view__list-item">
             <%= link_to "#{wiki.name}", wiki %>
           </li>
@@ -21,7 +14,7 @@
         <li class="standard-view__list-item">
           <%= link_to "New wiki...", new_wiki_path, method: :post,
             class: "standard-view__list-link" %>
-          <%= link_to "All Wikis", wiki_index_path, class: "standard-view__list-link" %>
+          <%= link_to "Home", root_path, class: "standard-view__list-link" %>
         </li>
       </ul>
     </section>

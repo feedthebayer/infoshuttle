@@ -12,6 +12,10 @@ class WikisController < ApplicationController
     @wiki = Wiki.find(params[:id])
   end
 
+  def index
+    @wikis = Wiki.all
+  end
+
   def update
     @wiki = Wiki.find(params[:id])
     @wiki.update_attributes!(wiki_params)

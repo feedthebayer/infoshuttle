@@ -12,10 +12,10 @@ class User < ActiveRecord::Base
   private
 
   def create_default_wiki
-    wiki = self.wikis.create!(name: "Your First Wiki")
+    wiki = self.wikis.create!(name: "Here's Your First Wiki!")
     wiki.pages.create!(
-      title: "Lots of helpful stuff!",
-      content: File.read(Rails.root.join('doc', 'default_wiki_page.txt'))
+      title: "Welcome to InfoShuttle!",
+      content: File.read(Rails.root.join('doc', 'default_wiki_page.md'))
     )
   end
 end
