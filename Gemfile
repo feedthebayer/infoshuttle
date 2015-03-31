@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'figaro'
 gem 'best_in_place'
 gem 'jquery-ui-rails'
+gem 'redcarpet'
 
 
 # Use Capistrano for deployment

@@ -24,6 +24,7 @@
           <%= best_in_place @page,
             :content,
             as: :textarea,
+            display_with: lambda { |m| markdown_to_html(m) },
             url: wiki_page_path,
             ok_button: "Update page content",
             cancel_button: "Cancel",
