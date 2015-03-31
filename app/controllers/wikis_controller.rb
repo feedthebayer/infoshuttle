@@ -1,6 +1,6 @@
 class WikisController < ApplicationController
 
-  def new
+  def create
     @wiki = current_user.wikis.new
     @wiki.save!
 

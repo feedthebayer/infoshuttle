@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  def new
+  def create
     @page = Wiki.find(params[:wiki_id]).pages.new
     @page.save!
 
@@ -9,12 +9,7 @@ class PagesController < ApplicationController
   end
 
   def show
-    redirect_to user_path if current_user && params[:id] == 'landing'
-    if params[:id] == 'landing'
-      render 'landing'
-    else
-      @page = Page.find(params[:id])
-    end
+    @page = Page.find(params[:id])
   end
 
   def update

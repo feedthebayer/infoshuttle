@@ -6,6 +6,6 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    redirect_to root_path, alert: "Sorry, but you must login first."
+    redirect_to root_path, alert: "Sorry, but you must sign in first. If you don't have an account, you can register for free!"
   end
 end

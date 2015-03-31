@@ -8,12 +8,24 @@
 
   <nav>
     <ul class="nav-links">
-      <li class="nav-links__item"><%= link_to "Level up!", root_path %></li>
-      <li class="nav-links__item"><%= link_to "Help", "https://twitter.com/feedthebayer" %></li>
-      <!-- <li class="nav&#45;links__item"><%= link_to "Account", edit_user_path(current_user) %></li> -->
-      <li class="nav-links__item"><%= link_to "Account", root_path %></li>
-      <li class="nav-links__item"><%= link_to "Sign out", sign_out_path,
-          method: :delete %></li>
+      <li class="nav-links__item">
+        <% if current_user %>
+          <%= link_to "Level up!", root_path %>
+        <% else %>
+          <%= link_to "Register for free!", root_path %>
+        <% end %>
+      </li>
+      <li class="nav-links__item">
+        <%= link_to "Help", "https://twitter.com/feedthebayer" %>
+      </li>
+      <% if current_user %>
+        <li class="nav-links__item">
+          <%= link_to "Account", edit_user_path(current_user) %>
+        </li>
+        <li class="nav-links__item">
+          <%= link_to "Sign out", sign_out_path, method: :delete %>
+        </li>
+      <% end %>
     </ul>
   </nav>
 </footer>

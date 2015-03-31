@@ -12,7 +12,7 @@
       <h3>
         <%= best_in_place @page,
           :title,
-          url: edit_wiki_page_path,
+          url: wiki_page_path,
           ok_button: "Update page title",
           cancel_button: "Cancel"
         %>
@@ -22,7 +22,7 @@
           <%= best_in_place @page,
             :content,
             as: :textarea,
-            url: edit_wiki_page_path,
+            url: wiki_page_path,
             ok_button: "Update page content",
             cancel_button: "Cancel",
             confirm: true
@@ -31,7 +31,7 @@
         <br>
         <li class="standard-view__list-item">
           <%= link_to "Back to wiki", @page.wiki, class: "standard-view__list-link" %>
-          <%= link_to "Delete page", delete_wiki_page_path(@page.wiki, @page),
+          <%= link_to "Delete page", [@page.wiki, @page],
             method: :delete, class: "standard-view__list-link",
             data: { confirm: "You're ok with deleting this page?" } %>
         </li>

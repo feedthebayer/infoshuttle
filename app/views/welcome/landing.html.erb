@@ -1,7 +1,7 @@
 <main class="landing">
   <nav class="landing__sign-in">
     <% if current_user %>
-      <%= link_to "Sign Out", sign_out_path, method: :post %>
+      <%= link_to "Sign Out", sign_out_path, method: :delete %>
     <% else %>
       <%= link_to "Sign In", auth_at_provider_path(:provider => :twitter) %>
     <% end %>

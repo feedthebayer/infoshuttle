@@ -18,9 +18,9 @@
         <% end %>
         <br>
         <li class="standard-view__list-item">
-          <%= link_to "New page...", new_wiki_page_path(@wiki), method: :post,
+          <%= link_to "New page...", wiki_pages_path(@wiki), method: :post,
               class: "standard-view__list-link" %>
-          <%= link_to "Delete wiki", delete_wiki_path(@wiki), method: :delete,
+          <%= link_to "Delete wiki", @wiki, method: :delete,
               class: "standard-view__list-link",
               data: { confirm: "You're ok with deleting this wiki?" } %>
         </li>
