@@ -1,4 +1,5 @@
 class WikisController < ApplicationController
+  before_filter :require_login, except: [:index, :show]
 
   def create
     @wiki = current_user.wikis.new

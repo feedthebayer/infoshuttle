@@ -3,7 +3,7 @@
 <main class="page">
   <div class="standard-view">
     <h1>
-      <%= best_in_place @page.wiki,
+      <%= best_in_place_if current_user, @page.wiki,
         :name,
         ok_button: "Update wiki name",
         cancel_button: "Cancel"
@@ -12,7 +12,7 @@
 
     <section class="standard-view__list">
       <h3>
-        <%= best_in_place @page,
+        <%= best_in_place_if current_user, @page,
           :title,
           url: wiki_page_path,
           ok_button: "Update page title",
@@ -21,7 +21,7 @@
       </h3>
       <ul>
         <li class="standard-view__list-item">
-          <%= best_in_place @page,
+          <%= best_in_place_if current_user, @page,
             :content,
             as: :textarea,
             display_with: lambda { |m| markdown_to_html(m) },

@@ -3,7 +3,7 @@
 <main class="wiki">
   <div class="standard-view">
     <h1>
-      <%= best_in_place @wiki,
+      <%= best_in_place_if current_user, @wiki,
         :name,
         ok_button: "Update wiki name",
         cancel_button: "Cancel"

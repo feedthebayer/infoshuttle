@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_filter :require_login, except: [:index, :show]
 
   def create
     @page = Wiki.find(params[:wiki_id]).pages.new
