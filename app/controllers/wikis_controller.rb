@@ -1,5 +1,6 @@
 class WikisController < ApplicationController
-  before_filter :require_login, except: [:index, :show]
+  load_and_authorize_resource
+  skip_load_resource only: :create
 
   def create
     @wiki = current_user.wikis.new
@@ -10,16 +11,13 @@ class WikisController < ApplicationController
   end
 
   def show
-    @wiki = Wiki.find(params[:id])
   end
 
   def index
-    @wikis = Wiki.all
   end
 
   def update
-    @wiki = Wiki.find(params[:id])
-    @wiki.update_attributes!(wiki_params)
+    @wiki.update_attributes!(update_params)
 
     respond_to do |format|
       format.json { respond_with_bip(@wiki) }
@@ -27,8 +25,6 @@ class WikisController < ApplicationController
   end
 
   def destroy
-    @wiki = Wiki.find(params[:id])
-
     if @wiki.destroy
       flash[:success] = "\"#{@wiki.name}\" has been deleted"
       redirect_to root_path
@@ -40,7 +36,7 @@ class WikisController < ApplicationController
 
   private
 
-  def wiki_params
+  def update_params
     params.require(:wiki).permit(:name)
   end
 end

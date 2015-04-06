@@ -21,8 +21,10 @@
         <% end %>
         <br>
         <li class="standard-view__list-item">
-          <%= link_to "New wiki...", wikis_path, method: :post,
-            class: "standard-view__list-link" %>
+          <% if can?(:create, @new_wiki) %>
+            <%= link_to "New wiki...", wikis_path, method: :post,
+              class: "standard-view__list-link" %>
+          <% end %>
           <%= link_to "All Wikis", wikis_path, class: "standard-view__list-link" %>
         </li>
       </ul>

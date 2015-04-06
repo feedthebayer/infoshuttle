@@ -3,7 +3,7 @@
 <main class="wiki">
   <div class="standard-view">
     <h1>
-      <%= best_in_place_if current_user, @wiki,
+      <%= best_in_place_if can?(:update, @wiki), @wiki,
         :name,
         ok_button: "Update wiki name",
         cancel_button: "Cancel"
@@ -20,11 +20,13 @@
         <% end %>
         <br>
         <li class="standard-view__list-item">
-          <%= link_to "New page...", wiki_pages_path(@wiki), method: :post,
-              class: "standard-view__list-link" %>
-          <%= link_to "Delete wiki", @wiki, method: :delete,
-              class: "standard-view__list-link",
-              data: { confirm: "You're ok with deleting this wiki?" } %>
+          <% if can?(:update, @wiki) %>
+            <%= link_to "New page...", wiki_pages_path(@wiki), method: :post,
+                class: "standard-view__list-link" %>
+            <%= link_to "Delete wiki", @wiki, method: :delete,
+                class: "standard-view__list-link",
+                data: { confirm: "You're ok with deleting this wiki?" } %>
+          <% end %>
         </li>
       </ul>
     </section>

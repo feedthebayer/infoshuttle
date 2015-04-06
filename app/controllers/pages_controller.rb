@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  before_filter :require_login, except: [:index, :show]
+  load_and_authorize_resource
+  skip_load_resource only: :create
 
   def create
     @page = Wiki.find(params[:wiki_id]).pages.new
@@ -10,12 +11,10 @@ class PagesController < ApplicationController
   end
 
   def show
-    @page = Page.find(params[:id])
   end
 
   def update
-    @page = Page.find(params[:id])
-    @page.update_attributes!(page_params)
+    @page.update_attributes!(update_params)
 
     respond_to do |format|
       format.json { respond_with_bip(@page) }
@@ -23,8 +22,6 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    @page = Page.find(params[:id])
-
     if @page.destroy
       flash[:success] = "\"#{@page.title}\" has been deleted"
       redirect_to @page.wiki
@@ -37,7 +34,7 @@ class PagesController < ApplicationController
 
   private
 
-  def page_params
+  def update_params
     params.require(:page).permit(:title, :content)
   end
 end
