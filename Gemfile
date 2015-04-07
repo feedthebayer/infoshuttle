@@ -17,6 +17,7 @@ gem 'best_in_place'
 gem 'jquery-ui-rails'
 gem 'redcarpet'
 gem 'cancancan'
+gem 'faker'
 
 
 # Use Capistrano for deployment
