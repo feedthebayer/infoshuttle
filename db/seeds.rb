@@ -12,7 +12,7 @@ premium_users = User.where(premium: true)
 
 # Create public and private wikis
 50.times do
-  reg_users.sample.wikis.create!(
+  users.sample.wikis.create!(
     name: Faker::Lorem.sentence,
     public: true,
   )
