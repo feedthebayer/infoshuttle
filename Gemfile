@@ -18,6 +18,7 @@ gem 'jquery-ui-rails'
 gem 'redcarpet'
 gem 'cancancan'
 gem 'faker'
+gem 'stripe'
 
 
 # Use Capistrano for deployment
