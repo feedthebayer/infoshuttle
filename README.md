@@ -29,10 +29,9 @@ This app lives at [infoshuttle.bayer.ws](http://infoshuttle.bayer.ws)
 
 ### Registered User
 
-* Has own public wiki by default that's seeded with helpful content and suggestions
 * Can create new public wikis
 
 ### Premium User
 
-* Can make their own user wiki private
 * Can create new private wikis
+* Can make their public wikis private
