@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get "/landing" => "welcome#show", id: "landing"
+  get "/premium" => "charges#new"
+  post "/premium" => "charges#create"
 
   post "oauth/callback" => "oauths#callback"
   get "oauth/callback" => "oauths#callback"

@@ -1,0 +1,49 @@
+<% content_for :title do "Premium" end %>
+
+<main class="premium">
+  <div class="standard-view">
+    <h1>
+      Make Your Wikis Private
+    </h1>
+
+    <section class="standard-view__list">
+      <h3>Upgrade to Premium Today!</h3>
+      <ul>
+        <li class="standard-view__list-item">
+          While regular users can have unlimited public wikis, you don't want
+          just anyone to see and change your content. Upgrading to premium allows
+          you to make your wikis private and only allow certain people to see
+          and edit them.
+        </li>
+        <li class="standard-view__list-item">
+          One-time upgrade fee: $15
+        </li>
+        <% if @can_upgrade_current_user %>
+          <li class="standard-view__list-item">
+            <%= form_tag premium_path do %>
+              <script class="stripe-button"
+              src="https://checkout.stripe.com/checkout.js"
+              data-key="<%= @stripe_btn_data[:key] %>"
+              data-amount=<%= @stripe_btn_data[:amount] %>
+              data-description="<%= @stripe_btn_data[:description] %>" ></script>
+            <% end %>
+          </li>
+        <% elsif current_user %>
+          <li class="standard-view__list-item">
+            <i>You are a premium user. Thanks for your support!</i>
+          </li>
+        <% else %>
+          <li class="standard-view__list-item">
+            <i>You need to
+              <%= link_to "register for a free account",
+                auth_at_provider_path(:provider => :twitter) %>
+              before you can upgrade to premium.</i>
+      </li>
+    <% end %>
+      </ul>
+    </section>
+
+    <%= render 'global_footer' %>
+  </div>
+</main>
+

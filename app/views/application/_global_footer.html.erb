@@ -11,7 +11,7 @@
       <% if current_user %>
         <% unless current_user.premium? %>
           <li class="nav-links__item">
-            <%= link_to "Level up!", root_path %>
+            <%= link_to "Level up!", premium_path %>
           </li>
         <% end %>
         <li class="nav-links__item">
