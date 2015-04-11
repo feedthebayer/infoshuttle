@@ -3,14 +3,14 @@ class ChargesController < ApplicationController
   def new
     if current_user
       @can_upgrade_current_user = !current_user.premium?
-    end
 
-    if @can_upgrade_current_user
-      @stripe_btn_data = {
-        key: "#{ Rails.configuration.stripe[:publishable_key] }",
-        description: "InfoShuttle Premium",
-        amount: Premium.cost
-      }
+      if @can_upgrade_current_user
+        @stripe_btn_data = {
+          key: "#{ Rails.configuration.stripe[:publishable_key] }",
+          description: "InfoShuttle Premium",
+          amount: Premium.cost
+        }
+      end
     end
   end
 
