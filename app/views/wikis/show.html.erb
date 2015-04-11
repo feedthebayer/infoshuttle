@@ -23,6 +23,15 @@
           <% if can?(:update, @wiki) %>
             <%= link_to "New page...", wiki_pages_path(@wiki), method: :post,
                 class: "standard-view__list-link" %>
+            <% if can?(:update, @premium_wiki) %>
+              <% if @wiki.public? %>
+                <%= link_to "Make private", wiki_path(wiki: { public: false }),
+                  method: :patch, class: "standard-view__list-link" %>
+              <% else %>
+                <%= link_to "Make public", wiki_path(wiki: { public: true }),
+                  method: :patch, class: "standard-view__list-link" %>
+              <% end %>
+            <% end %>
             <%= link_to "Delete wiki", @wiki, method: :delete,
                 class: "standard-view__list-link",
                 data: { confirm: "You're ok with deleting this wiki?" } %>

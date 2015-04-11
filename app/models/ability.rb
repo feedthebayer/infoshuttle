@@ -2,6 +2,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    # NOTE - the order of these rules is very important!
     user ||= User.new # guest user (not logged in)
 
     can :read, User
@@ -11,8 +12,12 @@ class Ability
     unless user.new_record?
       can :manage, Wiki, public: true
       can :manage, Wiki, user_id: user.id
+      cannot :manage, Wiki, public: false unless user.premium?
+
       can :manage, Page, wiki: { public: true }
       can :manage, Page, wiki: { user_id: user.id }
+      cannot :manage, Page, wiki: { public: false } unless user.premium?
+
       can :manage, User, id: user.id
     end
 

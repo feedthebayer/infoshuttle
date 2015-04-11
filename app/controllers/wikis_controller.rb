@@ -11,6 +11,9 @@ class WikisController < ApplicationController
   end
 
   def show
+    if current_user
+      @premium_wiki = current_user.wikis.new(public: false)
+    end
   end
 
   def index
@@ -21,6 +24,7 @@ class WikisController < ApplicationController
 
     respond_to do |format|
       format.json { respond_with_bip(@wiki) }
+      format.html { redirect_to @wiki }
     end
   end
 
@@ -37,6 +41,6 @@ class WikisController < ApplicationController
   private
 
   def update_params
-    params.require(:wiki).permit(:name)
+    params.require(:wiki).permit(:name, :public)
   end
 end
