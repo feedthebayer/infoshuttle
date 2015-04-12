@@ -32,7 +32,7 @@ private_wikis = Wiki.where(public: false)
 # Create pages
 350.times do
   wikis.sample.pages.create!(
-    title: Faker::Lorem.sentance,
+    title: Faker::Lorem.sentence,
     content: Faker::Lorem.paragraphs,
   )
 end

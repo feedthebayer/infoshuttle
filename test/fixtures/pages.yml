@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  content: MyText
-  wiki_id: 
+page1:
+  title: First Test Page
+  content: Yay, first page
+  wiki: public_wiki 
 
-two:
-  title: MyString
-  content: MyText
-  wiki_id: 
+page2:
+  title: Second Test Page
+  content: Yay, second page
+  wiki: private_wiki 

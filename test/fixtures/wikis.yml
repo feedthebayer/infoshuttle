@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  public: false
-  user_id: 
+public_wiki1:
+  name: Public Test Wiki One
+  public: true
+  user: free_user
 
-two:
-  name: MyString
+public_wiki2:
+  name: Public Test Wiki Two
+  public: true
+  user: premium_user
+
+private_wiki1:
+  name: Private Test Wiki One
   public: false
-  user_id: 
+  user: premium_user 

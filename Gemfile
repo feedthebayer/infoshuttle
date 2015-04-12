@@ -38,6 +38,7 @@ group :development, :test do
   gem 'rack-livereload'
   gem 'awesome_print', require:"ap"
   gem 'quiet_assets'
+  gem 'capybara'
 end
 
 group :production do

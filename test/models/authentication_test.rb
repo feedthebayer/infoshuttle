@@ -1,7 +1,5 @@
 require 'test_helper'
 
 class AuthenticationTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  # This model is simple enough to not need a test
 end
