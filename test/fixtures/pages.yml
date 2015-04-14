@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-page1:
+public_page1:
   title: First Test Page
   content: Yay, first page
-  wiki: public_wiki 
+  wiki: public_wiki1
 
-page2:
+public_page2:
   title: Second Test Page
   content: Yay, second page
-  wiki: private_wiki 
+  wiki: public_wiki2 
+
+private_page1:
+  title: Third Test Page
+  content: Yay, third page
+  wiki: private_wiki1 
