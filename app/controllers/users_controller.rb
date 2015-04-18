@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   load_and_authorize_resource
 
   def show
-    @wikis = @user.wikis.accessible_by(current_ability)
+    @wikis = @user.owned_wikis
     @new_wiki = Wiki.new
   end
 end

@@ -3,7 +3,7 @@ class WikisController < ApplicationController
   skip_load_resource only: :create
 
   def create
-    @wiki = current_user.wikis.new
+    @wiki = current_user.owned_wikis.new
     @wiki.save!
 
     params[:id] = @wiki.id
@@ -12,7 +12,7 @@ class WikisController < ApplicationController
 
   def show
     if current_user
-      @premium_wiki = current_user.wikis.new(public: false)
+      @premium_wiki = current_user.owned_wikis.new(public: false)
     end
   end
 

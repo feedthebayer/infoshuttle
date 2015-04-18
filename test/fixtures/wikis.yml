@@ -3,14 +3,14 @@
 public_wiki1:
   name: Public Test Wiki One
   public: true
-  user: free_user
+  owner: free_user
 
 public_wiki2:
   name: Public Test Wiki Two
   public: true
-  user: premium_user
+  owner: premium_user
 
 private_wiki1:
   name: Private Test Wiki One
   public: false
-  user: premium_user 
+  owner: premium_user 
