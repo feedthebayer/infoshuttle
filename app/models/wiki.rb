@@ -1,5 +1,7 @@
 class Wiki < ActiveRecord::Base
   belongs_to :owner, class_name: "User"
+  has_many :collaborations, dependent: :destroy
+  has_many :users, through: :collaborations
   has_many :pages, inverse_of: :wiki, dependent: :destroy
 
   validates :name, presence: true

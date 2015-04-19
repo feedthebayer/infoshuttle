@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+collaboration1:
+  user: premium_user 
+  wiki: private_wiki1
+

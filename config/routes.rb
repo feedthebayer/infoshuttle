@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :wikis, only: [:create, :index]
   resources :wikis, path: "", only: [:show, :update, :destroy] do
     resources :pages, only: [:create, :show, :update, :destroy]
+    resources :collaborations, only: [:create, :destroy]
   end
 
   root "welcome#show"

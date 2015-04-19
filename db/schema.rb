@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418220817) do
+ActiveRecord::Schema.define(version: 20150418225036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20150418220817) do
   end
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
+
+  create_table "collaborations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "wiki_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "collaborations", ["user_id"], name: "index_collaborations_on_user_id", using: :btree
+  add_index "collaborations", ["wiki_id"], name: "index_collaborations_on_wiki_id", using: :btree
 
   create_table "pages", force: :cascade do |t|
     t.string   "title",      default: "Click here to change the page title"
@@ -59,6 +69,8 @@ ActiveRecord::Schema.define(version: 20150418220817) do
 
   add_index "wikis", ["owner_id"], name: "index_wikis_on_owner_id", using: :btree
 
+  add_foreign_key "collaborations", "users"
+  add_foreign_key "collaborations", "wikis"
   add_foreign_key "pages", "wikis"
   add_foreign_key "wikis", "users", column: "owner_id"
 end
