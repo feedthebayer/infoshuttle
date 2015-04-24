@@ -23,6 +23,10 @@
           <% if can?(:update, @wiki) %>
             <%= link_to "New page...", wiki_pages_path(@wiki), method: :post,
                 class: "standard-view__list-link" %>
+            <% if can?(:collaborators, @wiki) %>
+              <%= link_to "Collaborators", collaborators_path(@wiki),
+                  class: "standard-view__list-link" %>
+            <% end %>
             <% if can?(:update, @premium_wiki) %>
               <% if @wiki.public? %>
                 <%= link_to "Make private", wiki_path(wiki: { public: false }),

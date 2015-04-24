@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :pages, only: [:create, :show, :update, :destroy]
     resources :collaborations, only: [:create, :destroy]
   end
+  get ":id/collaborators" => "wikis#collaborators", as: "collaborators"
 
   root "welcome#show"
 end

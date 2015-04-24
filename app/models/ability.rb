@@ -11,15 +11,20 @@ class Ability
 
     unless user.new_record?
       can :manage, Wiki, public: true
+      cannot :collaborators, Wiki
       can :manage, Page, wiki: { public: true }
       can :manage, User, id: user.id
 
       if user.premium?
         can :manage, Wiki, owner_id: user.id
         can :manage, Wiki, public: false
+        cannot :collaborators, Wiki, public: true
+
         can :manage, Page, wiki: { owner_id: user.id }
         can :manage, Page, wiki: { public: false }
+
         can :manage, Collaboration, wiki: { owner_id: user.id }
+        cannot :manage, Collaboration, wiki: { public: true }
       end
     end
 

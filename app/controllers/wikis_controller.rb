@@ -5,15 +5,18 @@ class WikisController < ApplicationController
   def create
     @wiki = current_user.owned_wikis.new
     @wiki.save!
-
-    params[:id] = @wiki.id
-    render :show
+    redirect_to @wiki
   end
 
   def show
     if current_user
       @premium_wiki = current_user.owned_wikis.new(public: false)
     end
+  end
+
+  def collaborators
+    @collaborations = @wiki.collaborations
+    @new_collaboration = Collaboration.new(wiki_id: @wiki.id)
   end
 
   def index

@@ -34,6 +34,10 @@
         <br>
         <li class="standard-view__list-item">
           <%= link_to "Back to wiki", @page.wiki, class: "standard-view__list-link" %>
+          <% if can?(:collaborators, @page.wiki) %>
+            <%= link_to "Collaborators", collaborators_path(@page.wiki),
+                class: "standard-view__list-link" %>
+          <% end %>
           <% if can?(:update, @page.wiki) %>
             <%= link_to "New page...", wiki_pages_path(@page.wiki), method: :post,
                 class: "standard-view__list-link" %>

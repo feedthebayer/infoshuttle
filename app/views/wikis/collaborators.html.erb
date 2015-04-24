@@ -1,0 +1,44 @@
+<% content_for :title do @wiki.name + "Collaborators" end %>
+
+<main class="collaborators">
+  <div class="standard-view">
+    <h1><%= @wiki.name %></h1>
+
+    <section class="standard-view__list">
+      <h3>Collaborators</h3>
+      <ul>
+        <li class="standard-view__list-item">
+          <%= @wiki.owner.username %> <small>(owner)</small>
+        </li>
+        <% @collaborations.each do |collaboration| %>
+          <li class="standard-view__list-item">
+            <%= collaboration.user.username %>
+            <% if can?(:update, collaboration) %>
+              <small>
+                <%= link_to "remove", [@wiki, collaboration], method: :delete,
+                  class: "standard-view__list-link" %>
+              </small>
+            <% end %>
+          </li>
+        <% end %>
+        <br>
+        <% if can?(:create, @new_collaboration) %>
+          <li class="standard-view__list-item" style="max-width: 15em">
+            <%= simple_form_for [@wiki, @new_collaboration] do |f| %>
+              <%= f.association :user, prompt: "Select a user...",
+                label_method: :username, label: false %>
+              <%= f.button :submit, "Add collaborator",
+                class: "tiny" %>
+            <% end %>
+          </li>
+        <% end %>
+        <li class="standard-view__list-item">
+          <%= link_to "Back to wiki", @wiki, class: "standard-view__list-link" %>
+        </li>
+      </ul>
+    </section>
+
+    <%= render 'global_footer' %>
+  </div>
+</main>
+
