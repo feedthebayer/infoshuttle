@@ -15,13 +15,13 @@ class GuestUserTest < ActionDispatch::IntegrationTest
   test "guest sees landing page at root" do
     get_via_redirect '/'
     assert_response :success, "couldn't access root"
-    assert_equal path, root_path, "guest user redirected"
+    assert_equal root_path, path, "guest user redirected"
     assert_template :landing, "wrong template"
   end
 
   test "guest only sees public wikis in index" do
     visit wikis_path
-    assert_equal current_path, wikis_path, "at wrong path"
+    assert_equal wikis_path, current_path, "at wrong path"
     assert page.has_content?(@public_wiki1.name), "public wiki missing"
     assert page.has_content?(@public_wiki2.name), "public wiki missing"
     assert page.has_no_content?(@private_wiki1.name), "private wiki shown"
@@ -29,13 +29,13 @@ class GuestUserTest < ActionDispatch::IntegrationTest
 
   test "guest can view public wikis" do
     visit wiki_path(@public_wiki1)
-    assert_equal current_path, wiki_path(@public_wiki1), "redirected"
+    assert_equal wiki_path(@public_wiki1), current_path, "redirected"
     assert page.has_content?(@public_page1.title), "page not found"
   end
 
   test "guest cannot view private wikis" do
     visit wiki_path(@private_wiki1)
-    assert_equal current_path, root_path, "not redirected"
+    assert_equal root_path, current_path, "not redirected"
   end
 
   test "guest cannot create wikis or pages" do
