@@ -4,13 +4,15 @@ class CollaborationsController < ApplicationController
 
   def create
     @wiki = Wiki.find(params[:wiki_id])
-    @collaboration = @wiki.collaborations.create!(
-      user_id: params[:collaboration][:user_id]
-    )
-    @user = @collaboration.user
+    @collaboration = @wiki.collaborations.new(
+                        user_id: params[:collaboration][:user_id])
 
-    flash[:success] = "#{@user.username} is now a collaborator"
-    redirect_to :back
+    if @collaboration.save
+      flash[:success] = "#{@collaboration.user.username} is now a collaborator"
+    else
+      flash[:success] = "#{@collaboration.user.username} is already a collaborator"
+    end
+      redirect_to :back
   end
 
   def destroy

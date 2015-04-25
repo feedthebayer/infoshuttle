@@ -5,6 +5,7 @@ class CollaborationsControllerTest < ActionController::TestCase
   def setup
     @user = users(:premium_user)
     # TODO - login user
+    raise "Sorcery doesn't support testing oauth logged_in users"
   end
 
   test "create new collaboration" do

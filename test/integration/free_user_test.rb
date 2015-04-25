@@ -13,12 +13,12 @@ class FreeUserTest < ActionDispatch::IntegrationTest
     @public_page2 = pages(:public_page2)
     @private_page1 = pages(:private_page1)
 
-    # TODO - Login
+    # TODO - Login user
+    raise "Sorcery doesn't support testing oauth logged_in users"
     # login_user
   end
 
-  test "free user" do
-    login_user
+  test "free user sees their wikis at root path" do
     visit root_path
     assert_equal user_path(@user), current_path
     # TODO
